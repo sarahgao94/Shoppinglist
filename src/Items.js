@@ -5,20 +5,19 @@ const Items = ({ items, deleteItems }) => {
     items.map((item) => {
       return (
         <div className="collection-item" key={item.id}>
-          <ul className="center">
-            <li
-              onClick={() => {
-                deleteItems(item.id);
-              }}
-            >
-              {item.content}
-            </li>
-          </ul>
+          <span
+            className="center"
+            onClick={() => {
+              deleteItems(item.id);
+            }}
+          >
+            {item.content}
+          </span>
         </div>
       );
     })
   ) : (
-    <p className="center">You have no more stuff buy</p>
+    <p className="center">You have no more stuff buy.</p>
   );
   return <div className="items collection">{itemsList}</div>;
 };
